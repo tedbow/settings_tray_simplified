@@ -1,9 +1,0 @@
-services:
-  access_check.settings_tray_simple.block.has_overrides:
-    class: Drupal\settings_tray_simple\Access\BlockHasOverridesAccessCheck
-    tags:
-      - { name: access_check, applies_to: _access_block_has_overrides_settings_tray_simple_form }
-  access_check.settings_tray_simple.block.settings_tray_simple_form:
-    class: Drupal\settings_tray_simple\Access\BlockPluginHasSettingsTrayFormAccessCheck
-    tags:
-      - { name: access_check, applies_to: _access_block_plugin_has_settings_tray_simple_form }

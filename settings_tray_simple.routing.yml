@@ -5,5 +5,3 @@ entity.block.off_canvas_form:
     _title_callback: '\Drupal\settings_tray_simple\Block\BlockEntityOffCanvasForm::title'
   requirements:
     _permission: 'administer blocks'
-    _access_block_plugin_has_settings_tray_simple_form: 'TRUE'
-    _access_block_has_overrides_settings_tray_simple_form: 'TRUE'
