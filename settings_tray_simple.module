@@ -128,14 +128,8 @@ function settings_tray_simple_toolbar_alter(&$items) {
     $items['contextual']['#attached']['library'][] = 'settings_tray_simple/drupal.settings_tray_simple';
     $items['contextual']['tab']['#attributes']['data-drupal-settingstray'] = 'toggle';
 
-    // Set a class on items to mark whether they should be active in edit mode.
-    // @todo Create a dynamic method for modules to set their own items.
-    //   https://www.drupal.org/node/2784589.
-    $edit_mode_items = ['contextual', 'block_place'];
-    foreach ($items as $key => $item) {
-      if (!in_array($key, $edit_mode_items) && (!isset($items[$key]['#wrapper_attributes']['class']) || !in_array('hidden', $items[$key]['#wrapper_attributes']['class']))) {
-        $items[$key]['#wrapper_attributes']['class'][] = 'edit-mode-inactive';
-      }
+    if (!isset($items['contextual']['#wrapper_attributes']['class']) || !in_array('hidden', $items['contextual']['#wrapper_attributes']['class'])) {
+      $items['contextual']['#wrapper_attributes']['class'][] = 'edit-mode-inactive';
     }
   }
 }
